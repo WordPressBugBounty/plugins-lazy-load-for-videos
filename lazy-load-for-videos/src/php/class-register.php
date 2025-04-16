@@ -1,18 +1,20 @@
 <?php
 require_once( LL_PATH . 'src/php/static-update-posts.php' );
 /**
- * register_activation_hook() and register_deactivation_hook() MUST NOT be called with action 'plugins_loaded' or any 'admin_init'
+ * register_activation_hook() and register_deactivation_hook() MUST be called DIRECTLY in the main plugin file, not inside any other hook or function.
  */
 register_activation_hook( LL_FILE, 'lazyloadvideos_plugin_activation' );
 register_deactivation_hook( LL_FILE, 'lazyloadvideos_plugin_deactivation' );
 register_uninstall_hook( LL_FILE, 'lazyloadvideos_plugin_uninstall');
 
 function lazyloadvideos_plugin_activation() {
+	require_once( LL_PATH . 'src/php/inc/signup-define.php' );
+
 	$signup = '<div id="mc_embed_signup">
 			<form action="'.LL_NEWS_ACTION_URL.'" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<div class="mc-field-group">
 					<label for="mce-EMAIL" style="line-height:2.5em">'.LL_NEWS_TEXT.'</label><br>
-					<input type="email" value="Enter your email address" name="EMAIL" class="required email" id="mce-EMAIL" onclick="this.focus();this.select()" onfocus="if(this.value == \'\') { this.value = this.defaultValue; }" onblur="if(this.value == \'\') { this.value = this.defaultValue; }">
+					<input type="email" value="'.LL_NEWS_MAILADDRESS.'" name="EMAIL" class="required email" id="mce-EMAIL" onclick="this.focus();this.select()" onfocus="if(this.value == \'\') { this.value = this.defaultValue; }" onblur="if(this.value == \'\') { this.value = this.defaultValue; }">
 					<input type="hidden" name="GROUPS" id="GROUPS" value="'.LL_NEWS_GROUP.'" />
 					<input type="submit" value="'.LL_NEWS_BUTTON.'" name="subscribe" id="mc-embedded-subscribe" class="button">
 				</div>

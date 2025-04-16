@@ -185,7 +185,7 @@ class KW_LLV_Admin {
 			<h2 class="claim" style="font-size:15px;font-style:italic;position:relative;top:-10px;"><?php esc_html_e( 'Speed up your site and customise your video player!', LL_TD ); ?></h2>
 
 			<ul class="nav-tab-wrapper">
-				<li class="nav-tab"><a href="#general"><?php esc_html_e('General/Styling', LL_TD); ?><span class="newred_dot">&bull;</span></a></li>
+				<li class="nav-tab"><a href="#general"><?php esc_html_e('General/Styling', LL_TD); ?></a></li>
 				<li class="nav-tab"><a href="#youtube"><?php esc_html_e('YouTube', LL_TD); ?></a></li>
 				<li class="nav-tab"><a href="#vimeo"><?php esc_html_e('Vimeo', LL_TD); ?><span class="newred_dot">&bull;</span></a></li>
 				<?php do_action('lazyload_settings_page_tabs_link_after'); ?>
@@ -211,7 +211,7 @@ class KW_LLV_Admin {
 						        </td>
 					        </tr>
 					        <tr valign="top">
-					        	<th scope="row"><label><?php esc_html_e( 'Play Button', LL_TD ); ?><span class="newred">Updated</span></label></th>
+					        	<th scope="row"><label><?php esc_html_e( 'Play Button', LL_TD ); ?></label></th>
 						        <td>
 									<select class="select" typle="select" name="ll_opt_button_style">
 										<option value="default"<?php if (get_option('ll_opt_button_style') === 'default') { echo ' selected="selected"'; } ?>><?php esc_html_e( 'White (CSS-only)', LL_TD ); ?></option>
@@ -422,10 +422,10 @@ class KW_LLV_Admin {
 				<form action="options-general.php?page=<?php echo LL_ADMIN_URL; ?>" method="post">
 				   <?php wp_nonce_field( 'lazyloadvideos_with_oembed_nonce', 'with_oembed_nonce' ); ?>
 				   <input type="hidden" name="update_posts" value="with_oembed" />
-				   <input class="button update-posts" type="submit" value="Update Posts" />
+				   <button class="button update-posts" type="submit" value="Update Posts"><?php esc_html_e( 'Update Posts', LL_TD ); ?></button>
 				</form>
 				<div class="help">
-					<span class="tooltip-right info-icon" data-tooltip="Save changes first.">?</span> <span><?php esc_html_e( 'Update posts to setup your plugin for the first time or when recommended somewhere.', LL_TD ); ?></span>
+					<span class="tooltip-right info-icon" data-tooltip="<?php esc_html_e( 'Save changes first.', LL_TD ); ?>">?</span> <span><?php esc_html_e( 'Update posts to setup your plugin for the first time or when recommended somewhere.', LL_TD ); ?></span>
 				</div>
 			</div>
 

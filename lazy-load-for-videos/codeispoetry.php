@@ -4,7 +4,7 @@
  * Plugin URI: https://www.kweber.com/lazy-load-videos/
  * Description: Lazy Load for Videos speeds up your site by replacing embedded Youtube and Vimeo videos with a clickable preview image. Visitors simply click on the image to play the video.
  * Author: Kevin Weber
- * Version: 2.18.3
+ * Version: 2.18.4
  * Author URI: https://www.kweber.com/
  * License: GPL v3
  * Text Domain: lazy-load-for-videos
@@ -12,7 +12,7 @@
 */
 
 /*
-	Copyright (C) 2021 Kevin Weber
+	Copyright (C) 2025 Kevin Weber
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ if ( !defined( 'LL_OPTION_KEY' ) ) {
 }
 
 if (!defined('LL_VERSION'))
-    define('LL_VERSION', '2.18.3');
+    define('LL_VERSION', '2.18.4');
 if (!defined('LL_VERSION_KEY'))
     define('LL_VERSION_KEY', LL_OPTION_KEY.'_version');
 
@@ -49,8 +49,12 @@ if ( !defined( 'LL_PATH' ) )
 if ( !defined( 'LL_URL' ) )
 	define( 'LL_URL', plugin_dir_url( __FILE__ ) );
 
+/**
+ * Definitions for admin page
+ */
+if ( !defined( 'LL_ADMIN_URL' ) )
+	define( 'LL_ADMIN_URL', 'lazyload.php' );
 
-require_once( LL_PATH . 'src/php/inc/define.php' );
 require_once( LL_PATH . 'src/php/class-register.php' );
 
 /**
@@ -60,7 +64,8 @@ require_once( LL_PATH . 'src/php/class-register.php' );
 function lazyload_load_textdomain() {
   load_plugin_textdomain( LL_TD, false, dirname( plugin_basename( LL_FILE ) ) . '/languages/' );
 }
-add_action( 'plugins_loaded', 'lazyload_load_textdomain' );
+
+add_action( 'init', 'lazyload_load_textdomain' );
 
 function lazyload_videos_init_plugins_loaded() {
 	require_once( LL_PATH . 'src/php/class-admin-options.php' );
@@ -68,7 +73,7 @@ function lazyload_videos_init_plugins_loaded() {
 	require_once( LL_PATH . 'src/php/class-editor.php' );
 }
 
-add_action( 'plugins_loaded', 'lazyload_videos_init_plugins_loaded', 15 );
+add_action( 'init', 'lazyload_videos_init_plugins_loaded' );
 
 
 
@@ -90,9 +95,9 @@ function lazyload_videos_frontend_init() {
 }
 
 if ( is_admin() ) {
-	add_action( 'plugins_loaded', 'lazyload_videos_admin_init', 16 );
+	add_action( 'init', 'lazyload_videos_admin_init', 16 );
 } else {
-	add_action( 'plugins_loaded', 'lazyload_videos_frontend_init', 16 );
+	add_action( 'init', 'lazyload_videos_frontend_init', 16 );
 }
 
 /***** Plugin by Kevin Weber || www.kweber.com *****/
