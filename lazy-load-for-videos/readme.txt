@@ -5,7 +5,7 @@ Tags: youtube, vimeo, performance, lazy-load, privacy
 Requires at least: 5.6
 Tested up to: 6.8.2
 Requires PHP: 7.2
-Stable tag: 2.18.8
+Stable tag: 2.18.9
 License: GPL v3
 License URI: https://www.gnu.org/copyleft/gpl.html
 
@@ -18,9 +18,9 @@ By loading videos only when the user clicks on the preview image, no unnecessary
 
 This plugin works for your existing YouTube and Vimeo blocks. No vendor lock-in and no custom shortcodes: Easily turn the plugin on and off anytime.
 
-Demo on the developer’s website: [www.kweber.com/lazy-load-videos/](https://www.kweber.com/lazy-load-videos/)
-
-You want to enhance this plugin? Please [contribute on Github](https://github.com/kevinweber/lazy-load-for-videos).
+Plugin review with speed test results [on WP Tavern](https://wptavern.com/speed-up-wordpress-with-lazy-load-for-videos).
+Developers can contribute [on Github](https://github.com/kevinweber/lazy-load-for-videos).
+More about the author: [on kweber.com](https://www.kweber.com).
 
 = Some additional features: =
 * Display video titles on preview images
@@ -154,6 +154,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 
 == Changelog ==
+
+= 2.18.9 =
+* Minor tweaks of texts and links on the admin page
 
 = 2.18.8 =
 * Security: Patch potential XSS attack vector
