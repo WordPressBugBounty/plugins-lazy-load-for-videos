@@ -5,7 +5,7 @@ Tags: youtube, vimeo, performance, lazy-load, privacy
 Requires at least: 5.6
 Tested up to: 6.8.2
 Requires PHP: 7.2
-Stable tag: 2.18.9
+Stable tag: 2.18.10
 License: GPL v3
 License URI: https://www.gnu.org/copyleft/gpl.html
 
@@ -20,7 +20,7 @@ This plugin works for your existing YouTube and Vimeo blocks. No vendor lock-in 
 
 Plugin review with speed test results [on WP Tavern](https://wptavern.com/speed-up-wordpress-with-lazy-load-for-videos).
 Developers can contribute [on Github](https://github.com/kevinweber/lazy-load-for-videos).
-More about the author: [on kweber.com](https://www.kweber.com).
+More about the author [on kweber.com](https://www.kweber.com).
 
 = Some additional features: =
 * Display video titles on preview images
@@ -154,6 +154,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 
 == Changelog ==
+
+= 2.18.10 =
+* Quality of life improvements, ensure WordPress 7.0+ compatibility
 
 = 2.18.9 =
 * Minor tweaks of texts and links on the admin page
